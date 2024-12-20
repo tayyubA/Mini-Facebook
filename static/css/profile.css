@@ -1,0 +1,259 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Heading Styling */
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #4a90e2;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* Profile Page Styling */
+  .profile-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-container h2 {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+  }
+  
+  .profile-content {
+    margin-bottom: 30px;
+  }
+  
+  .profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #4a90e2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .profile-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .profile-content strong {
+    color: #4a90e2;
+  }
+  
+  .edit-profile {
+    margin-top: 30px;
+  }
+  
+  .edit-profile a {
+    font-size: 1.1rem;
+    color: #4a90e2;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .edit-profile a:hover {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .edit-profile a:active {
+    background-color: #357ab7;
+  }
+  
+  /* Post Form Styling */
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  
+  input[type="file"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    background-color: #f4f7fc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="file"]:hover {
+    background-color: #e1e9f0;
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    text-align: center;
+  }
+  
+  button:hover {
+    background-color: #357ab7;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background-color: #2d6a97;
+    transform: translateY(1px);
+  }
+  
+  /* Post Styling */
+  .post {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+    margin-bottom: 15px;
+  }
+  
+  .post p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .post small {
+    display: block;
+    margin-top: 10px;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+  
+  /* Image Styling */
+  .post-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: #4a90e2;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .nav-item:hover {
+    color: #357ab7;
+    background-color: #ffffff1a;
+  }
+  
+  .nav-item:active {
+    background-color: #357ab7;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .navbar-links {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .profile-container {
+      padding: 20px;
+      margin-top: 100px; /* To avoid navbar overlap */
+    }
+    
+    .post {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .post p {
+        font-size: 1.1rem;
+    }
+  }
+  

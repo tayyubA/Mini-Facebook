@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">Facebook</a>
+      <ul class="navbar-links">
+        <li><a href="/" class="nav-item">Home</a></li>
+        <li><a href="/create_post" class="nav-item">Create Post</a></li>
+        <li><a href="/profile" class="nav-item">Profile</a></li>
+        <li><a href="/logout" class="nav-item">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class = "user-name">
+    <h1>Welcome, {{ name }}!</h1>
+
+  </div>  
+
+  
+  <form method="POST" enctype="multipart/form-data">
+    <textarea name="post-text" rows="4" placeholder="What's on your mind?"></textarea><br><br>
+    <input type="file" name="post-image" /><br><br>
+    <button type="submit">Post</button>
+  </form>
+
+  <h3>Feed</h3>
+  <ul>
+    {% for post in posts %}
+      <div class="post" id="post-{{ post['_id'] }}">
+        <p>{{ post['text'] }}</p>
+        <small>{{ post['timestamp'] }}</small>
+        <p>{{ post['username'] }}</p>
+        
+        {% if post['image_url'] %}
+          <img src="{{ post['image_url'] }}" alt="Post Image" class="post-image">
+        {% endif %}
+
+        <!-- Comment Form -->
+        <form method="POST" action="{{ url_for('add_comment', post_id=post['_id']) }}">
+          <input type="hidden" name="name" value="{{ name }}"> <!-- Pass name here -->
+          <textarea name="comment-text" rows="3" placeholder="Add a comment..."></textarea><br><br>
+          <button type="submit">Comment</button>
+        </form>
+
+        <!-- Display Comments -->
+        <ul>
+          {% for comment in post['comments'] %}
+            <li>{{ comment['text'] }} - <small>{{ comment['timestamp'] }} - <p>{{comment ['user_name']}}</p></small></li>
+          {% endfor %}
+        </ul>
+
+        <!-- Like Button and Display Likes -->
+        <form method="POST" action="{{ url_for('like_post', post_id=post['_id']) }}">
+          <button type="submit">
+            {% if name in post['likes'] %}
+              Unlike
+            {% else %}
+              Like
+            {% endif %}
+          </button>
+        </form>
+
+        <!-- Display Number of Likes -->
+        <p>Likes: {{ post['likes']|length }}</p>
+
+      </div>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
